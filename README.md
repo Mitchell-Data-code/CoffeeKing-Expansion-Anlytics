@@ -1,2 +1,8 @@
-# CoffeeKing-Expansion-Analytics
-This data analysis project focused on CoffeeKing and imployed the Yelp Data to provide insights to CoffeeKing expansion regarding location selection, hours of operation and customer perceptions through reviews/ratings in Nashville, TN.
+# Count of coffee shops by star rating
+SELECT 
+  stars AS star_rating,
+  COUNT(*) AS count_of_businesses
+FROM yelp_academic_dataset_nash_business
+WHERE categories LIKE '%Coffee & Tea%'
+GROUP BY stars
+ORDER BY stars
